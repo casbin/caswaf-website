@@ -1,0 +1,78 @@
+name: Build and Deploy
+on: 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  push:
+      branches:
+        - master
+
+jobs:
+  build-and-generate-pdf:
+    env:
+      CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Install and Build 🔧
+        run: |
+          yarn install
+          # yarn crowdin:sync
+          yarn build
+    
+      - name: Build PDF prerequisites 🔨
+        run: |
+          sudo apt install fonts-noto -y
+          curl https://www.princexml.com/download/prince-14.2-linux-generic-x86_64.tar.gz -O
+          tar zxf prince-14.2-linux-generic-x86_64.tar.gz
+          cd prince-14.2-linux-generic-x86_64
+          yes "" | sudo ./install.sh
+
+      # https://github.com/signcl/docusaurus-prince-pdf
+      - name: Generate PDF 🖨️
+        run: |
+          yarn serve > /dev/null &
+          sleep 3s
+          npx docusaurus-prince-pdf --include-index -u http://localhost:3000/docs/overview --output pdf/CasWAF_Docs.pdf
+          npx docusaurus-prince-pdf --include-index -u http://localhost:3000/zh/docs/overview --list-only
+          wget https://gist.githubusercontent.com/Selflocking/7a07d91d34ee227c93d2d8f583f981e3/raw/996a610b96e7e1f42e06ec555528f3427c2fb647/print.css
+          prince --no-warn-css --style=print.css --input-list=./pdf/localhost-zh-docs-overview.txt -o pdf/CasWAF_Docs_zh.pdf
+          rm pdf/*.txt
+          mv pdf/* build/pdf/ -f
+
+      - name: Upload results 📤
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDFs
+          path: build/pdf/
+          if-no-files-found: error
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: './build'
+    
+  deploy:
+    # Add a dependency to the build job
+    needs: build-and-generate-pdf
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
