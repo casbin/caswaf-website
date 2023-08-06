@@ -5,14 +5,50 @@ keywords: [caswaf]
 authors: [casbin]
 ---
 
-## Headers
+CasWAF is an open-source Web Application Firewall (WAF) software developed by Go and React.
 
-Only h2 and h3 will be in the TOC by default, so h1 is not recommended to use.
+## CasWAF features
 
-### h3
+1. Front-end and back-end separate architecture, developed by Golang, CasWAF provides web-based managing UI and supports multiple languages(Chinese, English).
 
-content
+2. Databases. Casdoor supports mainstream databases: MySQL, PostgreSQL, SQL Server, etc.
 
-#### h4
+3. Reverse proxy. CasWAF supports reverse proxy, which can be used as a reverse proxy server to protect the backend server.
 
-content
+4. OAuth proxy. CasWAF supports OAuth login, which can be integrated with the existing OAuth system such as [Casdoor](https://casdoor.org/).
+
+## How it works
+
+CasWAF has both reverse proxy and OAuth proxy functionalities. If you haven't configured OAuth for your website, it will function solely as a reverse proxy server.
+
+### Reverse proxy
+CasWAF appears externally as a reverse proxy server, providing an additional layer of security for your web servers and applications.
+
+It sits between the users and web servers, acting as an intermediary, receiving requests from users, and forwarding them to the target web servers.
+
+### OAuth proxy
+CasWAF OAuth proxy acts as an Identity Provider (IdP) and collaborates with your application to perform authentication and authorization through the OAuth protocol.
+
+When a user attempts to access a resource that requires authentication, CasWAF will redirect the user to the real Identity Provider (IdP).
+
+Subsequently, the OAuth proxy will guide the user to the configured Identity Provider (e.g., Google, Facebook, or an internal authentication service within the company) for authentication.
+
+In CasWAF, we use [Casdoor](https://casdoor.org/) as the Identity Provider (IdP). More information of Casdoor SSO can be found [here](https://).
+
+## Online Demo
+
+Here is an online demo:
+- Deployed site: [https://waf.casbin.com/](https://waf.casbin.com/)
+
+Global admin login:
+- Username: `admin`
+- Password: `123`
+
+## Architecture
+
+Caswaf contains 2 parts:
+
+| Name | Description | Language | Source code |
+| ----|------|----|---- |
+| Frontend | Web frontend UI for CasWAF | Javascript + React | https://github.com/casbin/caswaf/tree/master/web |
+| Backend | RESTful API backend for CAsWAF | Golang + Beego + MySQL | https://github.com/casbin/caswaf |
