@@ -1,0 +1,38 @@
+---
+title: Cert List
+description: Learn how to add your server's certificates in CasWAF.
+keywords: [caswaf]
+authors: [casbin]
+---
+If your website supports HTTPS access, you need to configure an SSL certificate in CasWAF to enable it to establish a secure connection with your server as a reverse proxy.
+
+This section will provide a detailed explanation of the properties and usage of `Cert`.
+## Cert properties
+- `Name`: The name of the certificate.
+- `Display name`: The display name of the certificate.
+- `Type`: The type of the certificate. This field is usually set to `SSL` since SSL is the most commonly used option.
+- `Crypto algorithm`: The crypto algorithm of the certificate. It can be set to `RSA` or `ECC` which is depend on algorithm your certificate used.
+- `Expire time`: The expire time of the certificate. This field will be automatically filled in when you set certificate and private key.
+- `Certificate`: The certificate content.
+    - The certificate is a public key that has been authenticated by a Certificate Authority (CA).
+- `Private key`: The private key content.
+    - The private key is a secret key that is used to encrypt and decrypt data.
+
+## Manage Certificates
+![](/img/certs/certs.png)
+
+In the Certs page, you will see all certs you have created. You can create, edit, delete and view the cert details. But now we don't have any certs.
+
+## Add a cert
+![](/img/certs/addcert.png)
+
+Just click the `Add` button, you will create a cert. The created cert will have some default information that you can modify.
+
+## Edit cert
+After you create a site, you can click the `edit` button to edit the site.
+
+![](/img/certs/editcert.png)
+
+Each field's meaning is as described above, and you can freely modify them according to the actual situation of your website.
+
+After you have completed the modifications, you only need to click the `Save` button to save your settings.

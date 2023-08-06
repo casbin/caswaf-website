@@ -7,7 +7,7 @@ authors: [casbin]
 
 `Site` is representing the real applications or websites you wish to protect.
 
-This section will provide a detailed explanation of the working principle and usage of `Site`.
+This section will provide a detailed explanation of the properties and usage of `Site`.
 
 ## Site properties
 - `Name`: The name of the site.
@@ -25,6 +25,7 @@ This section will provide a detailed explanation of the working principle and us
 - `SSL cert`: The SSL certificate of the site. User can select the SSL certificate from the dropdown list.
     - About how to add SSL certificate, please refer to [SSL Certificates](/docs/cert).
 - `Casdoor app`: If yor site need OAuth login, you can select the Casdoor app from the dropdown list.
+    - CasWAF uses Casdoor as the OAuth server. So you need to register your site as a Casdoor app first.
     - About how to add Casdoor app, please refer to [Casdoor SSO](/docs/casdoor-sso).
 
 ## Usage
