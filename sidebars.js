@@ -27,7 +27,7 @@ module.exports = {
       label: "Sites",
       link: {type: "generated-index"},
       items: [
-        "sites-configuration",
+        "site",
       ],
     },
     {
@@ -35,7 +35,7 @@ module.exports = {
       label: "Certs",
       link: {type: "generated-index"},
       items: [
-        "certs-configuration",
+        "cert",
       ],
     },
     // {
