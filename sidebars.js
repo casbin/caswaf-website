@@ -17,11 +17,25 @@ module.exports = {
       link: {type: "generated-index"},
       items: [
         "overview",
-        {
-          type: "link",
-          label: "PDF Download",
-          href: "/pdf",
-        },
+        "core-concepts",
+        "installation",
+        "casdoor-sso",
+      ],
+    },
+    {
+      type: "category",
+      label: "Sites",
+      link: {type: "generated-index"},
+      items: [
+        "sites-configuration",
+      ],
+    },
+    {
+      type: "category",
+      label: "Certs",
+      link: {type: "generated-index"},
+      items: [
+        "certs-configuration",
       ],
     },
     // {
