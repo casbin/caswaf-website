@@ -1,0 +1,51 @@
+---
+title: Site List
+description: Learn how to configure your site in CasWAF.
+keywords: [caswaf]
+authors: [casbin]
+---
+
+`Site` is representing the real applications or websites you wish to protect.
+
+This section will provide a detailed explanation of the working principle and usage of `Site`.
+
+## Site properties
+- `Name`: The name of the site.
+- `DisplayName`: The display name of the site.
+- `Domain`: The domain of the site.
+    - e.g. `blog.example.com`
+- `Host`: The host of the site.
+    - e.g. `localhost:8080`
+- `Public IP (Optional)`: The public IP of the site (if available).
+- `Node (Optional)`: The name of the host on which the site is deployed.
+- `SSL mode`: The SSL mode of the site. It can be `HTTP` or `HTTPS and HTTP` or `HTTPS Only`.
+    - `HTTP`: The site is not using SSL. Users can access the site **only** via HTTP.
+    - `HTTPS and HTTP`: The site is using SSL and HTTP. Users can access the site via **both** HTTP and HTTPS.
+    - `HTTPS Only`: The site is using SSL only. Users can access the site **only** via HTTPS. If users access the site via HTTP, they will be redirected to HTTPS.
+- `SSL cert`: The SSL certificate of the site. User can select the SSL certificate from the dropdown list.
+    - About how to add SSL certificate, please refer to [SSL Certificates](/docs/cert).
+- `Casdoor app`: If yor site need OAuth login, you can select the Casdoor app from the dropdown list.
+    - About how to add Casdoor app, please refer to [Casdoor SSO](/docs/casdoor-sso).
+
+## Usage
+### Manage sites
+
+![overview](/img/sites/sites.png)
+
+In the Sites page, you will see all sites you have created. You can create, edit, delete and view the site details. But now we don't have any sites.
+
+### Add a site
+
+![add](/img/sites/addsite.png)
+
+Just click the `Add` button, you will create a site. The created Site will have some default information that you can modify.
+
+### Edit site
+
+After you create a site, you can click the `edit` button to edit the site.
+
+![edit](/img/sites/editsite.png)
+
+Each field's meaning is as described above, and you can freely modify them according to the actual situation of your website.
+
+After you have completed the modifications, you only need to click the `Save` button to save your settings.
