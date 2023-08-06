@@ -8,10 +8,13 @@ authors: [casbin]
 CasWAF uses Casdoor to manage members. So you need to create an organization and an application for CasWAF in a Casdoor instance.
 
 ## Requirements
+
 ### OS
+
 All major operating systems including Windows, Linux and macOS are supported.
 
 ### Environments
+
 - [Go 1.17+](https://go.dev/dl/)
 - [Node.js LTS (16 or 14)](https://nodejs.org)
 - [Yarn 1.x](https://classic.yarnpkg.com/en/docs/install)
@@ -26,12 +29,12 @@ For **Chinese** users, in order to download the Go dependency packages successfu
 
 ## Download
 
-The source code of CasWAF is hosted at GitHub: https://github.com/casbin/caswaf. Both the Go backend code and React frontend code are inside the single repository.
+The source code of CasWAF is hosted at GitHub: <https://github.com/casbin/caswaf>. Both the Go backend code and React frontend code are inside the single repository.
 
 | Name | Description | Language | Source code |
 | ----|------|----|---- |
-| Frontend | Web frontend UI for CasWAF | Javascript + React | https://github.com/casbin/caswaf/tree/master/web |
-| Backend | RESTful API backend for CAsWAF | Golang + Beego + MySQL | https://github.com/casbin/caswaf |
+| Frontend | Web frontend UI for CasWAF | Javascript + React | <https://github.com/casbin/caswaf/tree/master/web> |
+| Backend | RESTful API backend for CAsWAF | Golang + Beego + MySQL | <https://github.com/casbin/caswaf> |
 
 CasWAF supports Go Modules. To download the code, you can just simply clone the code both via `go get` and `git`:
 
@@ -51,18 +54,19 @@ git clone https://github.com/casbin/caswaf
 
 ### Set up database
 
-CasWAF will store its users, nodes and topics information in a MySQL database named: `caswaf`. CasWAF will create it if not existed. The DB connection string can be specified at: https://github.com/casbin/caswaf/blob/master/conf/app.conf
+CasWAF will store its users, nodes and topics information in a MySQL database named: `caswaf`. CasWAF will create it if not existed. The DB connection string can be specified at: <https://github.com/casbin/caswaf/blob/master/conf/app.conf>
 
 ```ini
 dataSourceName = root:123@tcp(localhost:3306)/
 ```
+
 CasWAF uses XORM to connect to DB, so all DBs supported by XORM can also be used.
 
 ### Configure Casdoor
 
 After creating an organization and an application for CasWAF in a Casdoor, you need to update `clientID`, `clientSecret`, `casdoorOrganization` and `casdoorApplication` in app.conf.
 
-More details about Casdoor configuration can be found at: https://caswaf.org/docs/integration-with-casdoor
+More details about Casdoor configuration can be found at: [casdoor-sso](/docs/casdoor-sso)
 
 ### Run CasWAF
 
@@ -77,7 +81,7 @@ More details about Casdoor configuration can be found at: https://caswaf.org/doc
 
 ### Set up your WAF to enable some third-party login platform
 
-CasWAF uses Casdoor to manage members. If you want to log in with oauth, you should see [casdoor oauth configuration](https://casdoor.org/docs/provider/OAuth).
+CasWAF uses Casdoor to manage members. If you want to log in with oauth, you should see [casdoor oauth configuration](https://casdoor.org/docs/category/oauth).
 
 ### OSS, Mail, and SMS services
 

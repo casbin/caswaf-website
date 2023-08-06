@@ -10,25 +10,27 @@ authors: [casbin]
 This section will provide a detailed explanation of the properties and usage of `Site`.
 
 ## Site properties
+
 - `Name`: The name of the site.
 - `DisplayName`: The display name of the site.
 - `Domain`: The domain of the site.
-    - e.g. `blog.example.com`
+  - e.g. `blog.example.com`
 - `Host`: The host of the site.
-    - e.g. `localhost:8080`
+  - e.g. `localhost:8080`
 - `Public IP (Optional)`: The public IP of the site (if available).
 - `Node (Optional)`: The name of the host on which the site is deployed.
 - `SSL mode`: The SSL mode of the site. It can be `HTTP` or `HTTPS and HTTP` or `HTTPS Only`.
-    - `HTTP`: The site is not using SSL. Users can access the site **only** via HTTP.
-    - `HTTPS and HTTP`: The site is using SSL and HTTP. Users can access the site via **both** HTTP and HTTPS.
-    - `HTTPS Only`: The site is using SSL only. Users can access the site **only** via HTTPS. If users access the site via HTTP, they will be redirected to HTTPS.
+  - `HTTP`: The site is not using SSL. Users can access the site **only** via HTTP.
+  - `HTTPS and HTTP`: The site is using SSL and HTTP. Users can access the site via **both** HTTP and HTTPS.
+  - `HTTPS Only`: The site is using SSL only. Users can access the site **only** via HTTPS. If users access the site via HTTP, they will be redirected to HTTPS.
 - `SSL cert`: The SSL certificate of the site. User can select the SSL certificate from the dropdown list.
-    - About how to add SSL certificate, please refer to [SSL Certificates](/docs/cert).
+  - About how to add SSL certificate, please refer to [SSL Certificates](/docs/cert).
 - `Casdoor app`: If yor site need OAuth login, you can select the Casdoor app from the dropdown list.
-    - CasWAF uses Casdoor as the OAuth server. So you need to register your site as a Casdoor app first.
-    - About how to add Casdoor app, please refer to [Casdoor SSO](/docs/casdoor-sso).
+  - CasWAF uses Casdoor as the OAuth server. So you need to register your site as a Casdoor app first.
+  - About how to add Casdoor app, please refer to [Casdoor SSO](/docs/casdoor-sso).
 
 ## Usage
+
 ### Manage sites
 
 ![overview](/img/sites/sites.png)
