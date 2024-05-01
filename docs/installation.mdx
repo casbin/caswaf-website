@@ -64,7 +64,26 @@ CasWAF uses XORM to connect to DB, so all DBs supported by XORM can also be used
 
 ### Configure Casdoor
 
-After creating an organization and an application for CasWAF in a Casdoor, you need to update `clientID`, `clientSecret`, `casdoorOrganization` and `casdoorApplication` in app.conf.
+After creating an organization and an application for CasWAF in a Casdoor, you need to update `clientID`, `clientSecret`, `casdoorOrganization` and `casdoorApplication` in app.conf and Conf.js.
+
+- Backend (conf/app.conf)
+
+```ini
+casdoorEndpoint = <Your Casdoor endpoint>
+clientId = <Your Casdoor application's client ID>
+clientSecret = <Your Casdoor application's client secret>
+casdoorOrganization = <Your Casdoor organization name>
+casdoorApplication = <Your Casdoor application name>
+```
+
+- Frontend (web/src/Conf.js)
+
+```js
+serverUrl: "<Your Casdoor endpoint>"
+clientId: "<Your Casdoor application's client ID>"
+appName: "<Your Casdoor application name>"
+organizationName: "<Your Casdoor organization name>"
+```
 
 More details about Casdoor configuration can be found at: [casdoor-sso](/docs/casdoor-sso)
 
