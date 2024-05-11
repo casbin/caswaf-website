@@ -19,6 +19,8 @@ CasWAF is an open-source Web Application Firewall (WAF) software developed by Go
 
 5. OAuth proxy. CasWAF supports OAuth login, which can be integrated with the existing OAuth system such as [Casdoor](https://casdoor.org/).
 
+6. Firewall. CasWAF uses [Coraza](https://github.com/corazawaf/coraza) as the firewall engine, which can protect the website from many common attack categories. Supports customized WAF rules.
+
 ## How it works
 
 CasWAF has both reverse proxy and OAuth proxy functionalities. If you haven't configured OAuth for your website, it will function solely as a reverse proxy server.
@@ -43,7 +45,7 @@ In CasWAF, we use [Casdoor](https://casdoor.org/) as the Identity Provider (IdP)
 
 Here is an online demo:
 
-- Deployed site: [https://waf.casbin.com/](https://waf.casbin.com/)
+- Deployed site: [https://door.caswaf.com](https://door.caswaf.com)
 
 Global admin login:
 

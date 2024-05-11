@@ -18,20 +18,28 @@ type Site struct {
     Owner       string `xorm:"varchar(100) notnull pk" json:"owner"`
     Name        string `xorm:"varchar(100) notnull pk" json:"name"`
     CreatedTime string `xorm:"varchar(100)" json:"createdTime"`
+    UpdatedTime string `xorm:"varchar(100)" json:"updatedTime"`
     DisplayName string `xorm:"varchar(100)" json:"displayName"`
 
-    Domain   string `xorm:"varchar(100)" json:"domain"`
-    Host     string `xorm:"varchar(100)" json:"host"`
-    SslMode  string `xorm:"varchar(100)" json:"sslMode"`
-    SslCert  string `xorm:"varchar(100)" json:"sslCert"`
-    PublicIp string `xorm:"varchar(100)" json:"publicIp"`
-    Node     string `xorm:"varchar(100)" json:"node"`
-    IsSelf   bool   `json:"isSelf"`
+    Tag          string     `xorm:"varchar(100)" json:"tag"`
+    Domain       string     `xorm:"varchar(100)" json:"domain"`
+    OtherDomains []string   `xorm:"varchar(500)" json:"otherDomains"`
+    NeedRedirect bool       `json:"needRedirect"`
+    EnableWaf    bool       `json:"enableWaf"`
+    Waf          coraza.WAF `xorm:"-" json:"-"`
+    Challenges   []string   `xorm:"mediumtext" json:"challenges"`
+    Host         string     `xorm:"varchar(100)" json:"host"`
+    Port         int        `json:"port"`
+    SslMode      string     `xorm:"varchar(100)" json:"sslMode"`
+    SslCert      string     `xorm:"-" json:"sslCert"`
+    PublicIp     string     `xorm:"varchar(100)" json:"publicIp"`
+    Node         string     `xorm:"varchar(100)" json:"node"`
+    IsSelf       bool       `json:"isSelf"`
+    Status       string     `xorm:"varchar(100)" json:"status"`
+    Nodes        []*Node    `xorm:"mediumtext" json:"nodes"`
 
-    CasdoorApplication string `xorm:"varchar(100)" json:"casdoorApplication"`
-
-    SslCertObj     *Cert                `xorm:"-" json:"sslCertObj"`
-    ApplicationObj *casdoor.Application `xorm:"-" json:"applicationObj"`
+    CasdoorApplication string                  `xorm:"varchar(100)" json:"casdoorApplication"`
+    ApplicationObj     *casdoorsdk.Application `xorm:"-" json:"applicationObj"`
 }
 ```
 
