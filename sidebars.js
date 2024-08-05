@@ -38,6 +38,17 @@ module.exports = {
         "cert",
       ],
     },
+    {
+      type: "category",
+      label: "Rules",
+      link: {type: "generated-index"},
+      items: [
+        "rule",
+        "ip-rule",
+        "ua-rule",
+        "waf-rule",
+      ],
+    },
     // {
     //   type: "category",
     //   label: "",
