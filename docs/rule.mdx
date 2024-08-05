@@ -1,0 +1,45 @@
+---
+title: Rule List
+description: Learn how to add your server's rule in CasWAF.
+keywords: [caswaf]
+authors: [casbin]
+---
+If you want your website under protection, you can add your rules in CasWAF.
+
+This section will provide a detailed explanation of the properties and usage of `Rule`.
+
+## Rule properties
+
+- `Name`: The name of the rule.
+- `Type`: The type of the rule. It can be set to `IP`, `User-Agent` and `WAF`.
+- `Expressions`: The expressions contains the rule's conditions, including `operator` and `value`.
+- `Action`: The action of the rule. It can be set to `Allow` or `Block`.
+- `Reason`: The reason of the rule. When the rule is hitted and its action is `Block`, CasWAF would reply a 403 response with the reason.
+
+## Manage Rules
+
+![rules](/img/rules/rules.jpg)
+
+In the Rules page, you will see all rules you have created. You can create, edit, delete and view the rule details. But now we don't have any rules.
+
+## Add a rule
+
+![addrule](/img/rules/addrule.jpg)
+
+Just click the `Add` button, you will create a rule. The created rule will have some default information that you can modify.
+
+## Edit rule
+
+After you create a rule, you can click the `edit` button to edit the rule.
+
+![editrule](/img/rules/editrule.jpg)
+
+Each field's meaning is as described above, and you can freely modify them according to the actual situation of your website.
+
+### Expressions
+
+![expressions](/img/rules/expressions.jpg)
+
+Click the `Add` button in the `Expressions` section, you Kcan add a new expression to the rule.
+
+Click the `Restore` button in the `Expressions` section, you can restore the default expressions of the rule.
