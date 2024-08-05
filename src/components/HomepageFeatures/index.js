@@ -7,40 +7,38 @@ import {useColorMode} from "@docusaurus/theme-common";
 const FeatureList = [
   {
     title: translate({
-      message: "Feature 1",
+      message: "Easy to Use",
     }),
     path: "/img/model",
     description: (
       <>
         <Translate>
-          detail description
+          Within a few steps, we can setup a CasWAF app and protect our websites.
         </Translate>
       </>
     ),
   },
   {
     title: translate({
-      message: "Feature 2",
+      message: "Frontend Backend Separation",
     }),
     path: "/img/storage",
     description: (
       <>
         <Translate>
-          detail description
+          CasWAF has a front-end back-end separation architecture, with maneuverable web UI and supporting high concurrency.
         </Translate>
       </>
     ),
   },
   {
     title: translate({
-      message: "Feature 3",
+      message: "Supporting Multi-Language",
     }),
     path: "/img/language",
     description: (
       <>
-        <Translate>
-          detail description
-        </Translate>
+        <Translate> CasWAF is supporting multi-languages, using i18n to support multi-languages UI. For more languages support, welcome to propose in</Translate> <a href="https://github.com/casbin/caswaf/"><Translate> our community</Translate></a>.
       </>
     ),
   },
