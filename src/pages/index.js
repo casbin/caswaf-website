@@ -81,7 +81,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
         <Showcase />
-        <OpenCollective />
+        {false && <OpenCollective />}
       </main>
     </Layout>
   );
