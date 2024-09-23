@@ -38,7 +38,7 @@ function Showcase() {
   return (
     <div className="hero text--center showcase">
       <div className="container">
-        <h1><Translate>Who&apos;s using Casbin?</Translate></h1>
+        <h1><Translate>Who&apos;s using CasWAF?</Translate></h1>
         <p style={{
           width: "50vw",
           margin: "auto",
@@ -50,7 +50,7 @@ function Showcase() {
               </Link>
             ),
           }}>
-            {"Hundreds of projects are using Casbin, from established Fortune 500 companies to hot new startups.If you're curious to see what can be accomplished Casbin, {UsersPage}!"}
+            {"Hundreds of projects are using CasWAF, from established Fortune 500 companies to hot new startups.If you're curious to see what can be accomplished CasWAF, {UsersPage}!"}
           </Translate>
         </p>
         <br /><br />

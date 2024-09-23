@@ -9,11 +9,11 @@ export default function Users() {
       <header className="hero hero--primary">
         <div className="container">
           <h1 className="hero__title">
-            <Translate>Who&apos;s using Casbin?</Translate>
+            <Translate>Who&apos;s using CasWAF?</Translate>
           </h1>
           <p className="hero__subtitle">
             <Translate>
-              Hundreds of projects are using Casbin, from established Fortune 500 companies to hot new startups. If you&apos;re curious to see what can be accomplished with Casbin, check out these apps!
+              Hundreds of projects are using CasWAF, from established Fortune 500 companies to hot new startups. If you&apos;re curious to see what can be accomplished with CasWAF, check out these apps!
             </Translate>
           </p>
         </div>
