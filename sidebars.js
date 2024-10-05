@@ -47,6 +47,8 @@ module.exports = {
         "ip-rule",
         "ua-rule",
         "waf-rule",
+        "ip-rate-rule",
+        "compound-rule",
       ],
     },
     // {
