@@ -51,6 +51,17 @@ module.exports = {
         "compound-rule",
       ],
     },
+    {
+      type: "category",
+      label: "Actions",
+      link: {type: "generated-index"},
+      items: [
+        "action",
+        "allow-action",
+        "block-action",
+        "captcha-action",
+      ],
+    },
     // {
     //   type: "category",
     //   label: "",

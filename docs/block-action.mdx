@@ -1,0 +1,11 @@
+---
+title: Block Action
+description: Learn how to configure your Block Action in CasWAF.
+keywords: [caswaf]
+authors: [casbin]
+---
+CasWAF provides a easy-to-use Block Action feature to help you control the access of your website. You can add Block Actions to block specific requests to your website.
+
+![block-action](/img/actions/block-action.jpg)
+
+It is recommended to follow the HTTP status code standard when setting the `Status Code` for the `Block` action. When the rule is hitted and its action is `Block`, CasWAF will respond with the specified status code.

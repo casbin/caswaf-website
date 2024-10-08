@@ -1,0 +1,15 @@
+---
+title: Captcha Action
+description: Learn how to configure your Captcha Action in CasWAF.
+keywords: [caswaf]
+authors: [casbin]
+---
+CasWAF provides a easy-to-use Captcha Action feature to help you control the access of your website. You can add Captcha Actions to require users to pass a CAPTCHA verification before accessing your website.
+
+![captcha-action](/img/actions/captcha-action.jpg)
+
+Before adding a Captcha Action, you need to make sure that you have added a Captcha applications in your Casdoor instance and your Casdoor version is greater than or equal to `v1.681.0`.
+
+## Captcha Action properties
+
+- `Immunity times`: Used in the `Captcha` type. The times that the user can access the site without captcha verification after passing the captcha verification. It should be a positive integer.
