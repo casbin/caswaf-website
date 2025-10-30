@@ -53,13 +53,10 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Actions",
+      label: "Records",
       link: {type: "generated-index"},
       items: [
-        "action",
-        "allow-action",
-        "block-action",
-        "captcha-action",
+        "record",
       ],
     },
     // {
