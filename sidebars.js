@@ -62,6 +62,14 @@ module.exports = {
         "captcha-action",
       ],
     },
+    {
+      type: "category",
+      label: "Records",
+      link: {type: "generated-index"},
+      items: [
+        "record",
+      ],
+    },
     // {
     //   type: "category",
     //   label: "",

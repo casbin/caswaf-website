@@ -10,15 +10,32 @@ This section will provide a detailed explanation of the properties and usage of 
 
 ## Cert properties
 
+### Basic Information
+
+- `Owner`: The owner of the certificate (organization or user).
 - `Name`: The name of the certificate.
-- `Display name`: The display name of the certificate.
+- `DisplayName`: The display name of the certificate.
+- `CreatedTime`: The timestamp when the certificate was created.
+
+### Certificate Configuration
+
 - `Type`: The type of the certificate. This field is usually set to `SSL` since SSL is the most commonly used option.
-- `Crypto algorithm`: The crypto algorithm of the certificate. It can be set to `RSA` or `ECC` which is depend on algorithm your certificate used.
-- `Expire time`: The expire time of the certificate. This field will be automatically filled in when you set certificate and private key.
+- `CryptoAlgorithm`: The cryptographic algorithm of the certificate. It can be set to `RSA` or `ECC` which depends on the algorithm your certificate uses.
+- `ExpireTime`: The expiration time of the certificate. This field will be automatically filled in when you set certificate and private key.
+- `DomainExpireTime`: The expiration time of the domain registration (if available from WHOIS lookup).
 - `Certificate`: The certificate content.
   - The certificate is a public key that has been authenticated by a Certificate Authority (CA).
-- `Private key`: The private key content.
+- `PrivateKey`: The private key content.
   - The private key is a secret key that is used to encrypt and decrypt data.
+
+### Automatic Certificate Management (ACME)
+
+CasWAF supports automatic certificate generation and renewal using ACME providers:
+
+- `Provider`: The DNS provider for automatic certificate management. Supported providers include `Aliyun` (Alibaba Cloud) and `GoDaddy`.
+- `Account`: The account identifier for the ACME provider.
+- `AccessKey`: The access key or API key for authenticating with the DNS provider.
+- `AccessSecret`: The access secret or API secret for authenticating with the DNS provider (masked in UI for security).
 
 ## Manage Certificates
 
