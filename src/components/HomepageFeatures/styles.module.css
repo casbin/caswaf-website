@@ -3,95 +3,54 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 4rem 0;
+  padding: 5rem 0;
   width: 100%;
   background: white;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 html[data-theme="dark"] .features {
   background: var(--ifm-background-color);
+  border-bottom: 1px solid #374151;
 }
 
 .featureCard {
-  position: relative;
-  margin-bottom: 2rem;
-  transition: transform 0.3s ease;
-}
-
-.featureCard:hover {
-  transform: translateY(-5px);
+  padding: 2rem;
+  height: 100%;
 }
 
 .featureIcon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  position: absolute;
-  top: -1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgb(102 126 234 / 40%);
-  z-index: 2;
+  margin-bottom: 1.5rem;
+  color: #4f46e5;
 }
 
-.featureSvg {
-  height: 180px;
-  width: 180px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgb(0 0 0 / 8%);
-  transition: box-shadow 0.3s ease;
-  margin-top: 2rem;
-}
-
-.featureCard:hover .featureSvg {
-  box-shadow: 0 8px 30px rgb(102 126 234 / 20%);
+html[data-theme="dark"] .featureIcon {
+  color: #818cf8;
 }
 
 .featureTitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-top: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--ifm-heading-color);
+  color: #111827;
+}
+
+html[data-theme="dark"] .featureTitle {
+  color: #f9fafb;
 }
 
 .featureDescription {
   font-size: 1rem;
-  line-height: 1.7;
-  color: var(--ifm-color-emphasis-700);
+  line-height: 1.625;
+  color: #6b7280;
 }
 
-.featureLink {
-  color: #667eea;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.featureLink:hover {
-  color: #764ba2;
-  text-decoration: underline;
+html[data-theme="dark"] .featureDescription {
+  color: #9ca3af;
 }
 
 @media only screen and (max-width: 996px) {
   .features {
     padding: 3rem 0;
-  }
-
-  .featureSvg {
-    height: 150px;
-    width: 150px;
-  }
-
-  .featureIcon {
-    font-size: 2.5rem;
-    width: 60px;
-    height: 60px;
   }
 }

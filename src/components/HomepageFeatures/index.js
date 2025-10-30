@@ -2,60 +2,67 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import Translate, {translate} from "@docusaurus/Translate";
-import {useColorMode} from "@docusaurus/theme-common";
 
 const FeatureList = [
   {
     title: translate({
-      message: "Enterprise-Grade Protection",
+      message: "Deploy in Minutes",
     }),
-    path: "/img/model",
-    icon: "🛡️",
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    ),
     description: (
       <>
         <Translate>
-          Deploy robust web application security in minutes. CasWAF provides comprehensive protection against OWASP Top 10 threats and sophisticated attack patterns.
+          Quick setup with Docker or Kubernetes. Start protecting your applications in under 10 minutes with our comprehensive documentation.
         </Translate>
       </>
     ),
   },
   {
     title: translate({
-      message: "Modern Architecture",
+      message: "High Performance",
     }),
-    path: "/img/storage",
-    icon: "⚡",
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
     description: (
       <>
         <Translate>
-          Built with a modern frontend-backend separation architecture. Features an intuitive web UI and handles high-concurrency workloads with ease.
+          Built for scale with low latency and high throughput. Handles millions of requests per day without compromising security.
         </Translate>
       </>
     ),
   },
   {
     title: translate({
-      message: "Global & Accessible",
+      message: "Open Source",
     }),
-    path: "/img/language",
-    icon: "🌍",
+    icon: (
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 16v-4" />
+        <path d="M12 8h.01" />
+      </svg>
+    ),
     description: (
       <>
-        <Translate>CasWAF supports multiple languages through i18n, making it accessible to teams worldwide. Join</Translate> <a href="https://github.com/casbin/caswaf/" className={styles.featureLink}><Translate>our community</Translate></a> <Translate>to contribute translations</Translate>.
+        <Translate>Community-driven development with transparent security practices. Audit the code, contribute features, and customize for your needs.</Translate>
       </>
     ),
   },
 ];
 
-function Feature({title, path, description, icon}) {
-  const {colorMode} = useColorMode();
+function Feature({title, description, icon}) {
   return (
     <div className={clsx("col col--4")}>
-      <div className={clsx("text--center", styles.featureCard)}>
+      <div className={styles.featureCard}>
         <div className={styles.featureIcon}>{icon}</div>
-        <img src={colorMode === "light" ? path + ".png" : path + "-dark.png"} className={styles.featureSvg} alt={title} />
-      </div>
-      <div className="text--center padding-horiz--md">
         <h3 className={styles.featureTitle}>{title}</h3>
         <p className={styles.featureDescription}>{description}</p>
       </div>
