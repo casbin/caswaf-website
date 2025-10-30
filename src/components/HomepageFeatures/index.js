@@ -9,7 +9,7 @@ const FeatureList = [
       message: "Deploy in Minutes",
     }),
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="10" />
         <polyline points="12 6 12 12 16 14" />
       </svg>
@@ -17,7 +17,7 @@ const FeatureList = [
     description: (
       <>
         <Translate>
-          Quick setup with Docker or Kubernetes. Start protecting your applications in under 10 minutes with our comprehensive documentation.
+          Quick setup with Docker or Kubernetes. Start protecting your applications in under 10 minutes with comprehensive documentation and examples.
         </Translate>
       </>
     ),
@@ -27,32 +27,33 @@ const FeatureList = [
       message: "High Performance",
     }),
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
       </svg>
     ),
     description: (
       <>
         <Translate>
-          Built for scale with low latency and high throughput. Handles millions of requests per day without compromising security.
+          Built for scale with low latency and high throughput. Handles millions of requests per day without compromising on security or performance.
         </Translate>
       </>
     ),
   },
   {
     title: translate({
-      message: "Open Source",
+      message: "Developer Friendly",
     }),
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 16v-4" />
-        <path d="M12 8h.01" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
       </svg>
     ),
     description: (
       <>
-        <Translate>Community-driven development with transparent security practices. Audit the code, contribute features, and customize for your needs.</Translate>
+        <Translate>
+          Modern API, extensive documentation, and active community support. Integrate seamlessly with your existing infrastructure and workflows.
+        </Translate>
       </>
     ),
   },
