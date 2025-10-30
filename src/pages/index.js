@@ -13,47 +13,53 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title"><Translate>CasWAF</Translate></h1>
-        <br />
-        <p className="hero__subtitle" style={{margin: "0 auto", maxWidth: 700}}>
-          <Translate>
-            Web Application Firewall (WAF), aligned with ModSecurity, powered by Casbin and Casdoor
-          </Translate>
-        </p>
-        <br />
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            style={{marginTop: "2rem", marginRight: "3rem", marginLeft: "3rem"}}
-            to="/docs/overview">
-            <Translate>Get Started</Translate>
-          </Link>
+        <div className={styles.heroContent}>
+          <h1 className={clsx("hero__title", styles.heroTitle)}>
+            <Translate>Secure Your Web Applications</Translate>
+          </h1>
+          <p className={clsx("hero__subtitle", styles.heroSubtitle)}>
+            <Translate>
+              CasWAF is a powerful, enterprise-grade Web Application Firewall that protects your applications from modern threats. Built with ModSecurity compatibility and powered by Casbin and Casdoor.
+            </Translate>
+          </p>
+          <div className={styles.buttons}>
+            <Link
+              className={clsx("button button--secondary button--lg", styles.ctaButton)}
+              to="/docs/overview">
+              <Translate>Get Started</Translate>
+              <span className={styles.arrow}>→</span>
+            </Link>
+            <Link
+              className={clsx("button button--outline button--lg", styles.secondaryButton)}
+              to="https://github.com/casbin/caswaf">
+              <Translate>View on GitHub</Translate>
+            </Link>
+          </div>
         </div>
       </div>
+      <div className={styles.heroBackground}></div>
     </header>
   );
 }
 
 function Showcase() {
   return (
-    <div className="hero text--center showcase">
+    <div className={clsx("hero text--center", styles.showcase)}>
       <div className="container">
-        <h1><Translate>Who&apos;s using CasWAF?</Translate></h1>
-        <p style={{
-          width: "50vw",
-          margin: "auto",
-        }}>
+        <h2 className={styles.showcaseTitle}>
+          <Translate>Trusted by Industry Leaders</Translate>
+        </h2>
+        <p className={styles.showcaseDescription}>
           <Translate values={{
             UsersPage: (
-              <Link to="/users">
-                <Translate>check out these apps</Translate>
+              <Link to="/users" className={styles.showcaseLink}>
+                <Translate>explore all use cases</Translate>
               </Link>
             ),
           }}>
-            {"Hundreds of projects are using CasWAF, from established Fortune 500 companies to hot new startups.If you're curious to see what can be accomplished CasWAF, {UsersPage}!"}
+            {"CasWAF protects hundreds of applications worldwide, from Fortune 500 companies to innovative startups. Want to see what's possible? {UsersPage}"}
           </Translate>
         </p>
-        <br /><br />
         <UserList />
       </div>
     </div>
