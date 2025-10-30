@@ -66,6 +66,53 @@ function Showcase() {
   );
 }
 
+function KeyBenefits() {
+  return (
+    <section className={styles.benefitsSection}>
+      <div className="container">
+        <div className={styles.benefitsGrid}>
+          <div className={styles.benefitItem}>
+            <div className={styles.benefitNumber}>01</div>
+            <h3><Translate>ModSecurity Compatible</Translate></h3>
+            <p>
+              <Translate>
+                Seamlessly integrate with existing ModSecurity rules and configurations. Leverage the vast ecosystem of security rules while benefiting from modern architecture.
+              </Translate>
+            </p>
+          </div>
+          <div className={styles.benefitItem}>
+            <div className={styles.benefitNumber}>02</div>
+            <h3><Translate>Powered by Casbin</Translate></h3>
+            <p>
+              <Translate>
+                Built on top of Casbin&apos;s robust authorization framework, ensuring fine-grained access control and flexible policy management for your security rules.
+              </Translate>
+            </p>
+          </div>
+          <div className={styles.benefitItem}>
+            <div className={styles.benefitNumber}>03</div>
+            <h3><Translate>Casdoor Integration</Translate></h3>
+            <p>
+              <Translate>
+                Integrated with Casdoor for enterprise-grade authentication and user management. Secure your WAF management interface with SSO and multi-factor authentication.
+              </Translate>
+            </p>
+          </div>
+          <div className={styles.benefitItem}>
+            <div className={styles.benefitNumber}>04</div>
+            <h3><Translate>Real-time Monitoring</Translate></h3>
+            <p>
+              <Translate>
+                Monitor threats in real-time with comprehensive dashboards and analytics. Get instant visibility into attack patterns and security events across your applications.
+              </Translate>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function OpenCollective() {
   if (useWindowSize() === "mobile") {
     return (
@@ -86,6 +133,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <KeyBenefits />
         <Showcase />
         {false && <OpenCollective />}
       </main>
