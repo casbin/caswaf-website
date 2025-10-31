@@ -2,58 +2,70 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import Translate, {translate} from "@docusaurus/Translate";
-import {useColorMode} from "@docusaurus/theme-common";
 
 const FeatureList = [
   {
     title: translate({
-      message: "Easy to Use",
+      message: "Deploy in Minutes",
     }),
-    path: "/img/model",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    ),
     description: (
       <>
         <Translate>
-          Within a few steps, we can setup a CasWAF app and protect our websites.
+          Quick setup with Docker or Kubernetes. Start protecting your applications in under 10 minutes with comprehensive documentation and examples.
         </Translate>
       </>
     ),
   },
   {
     title: translate({
-      message: "Frontend Backend Separation",
+      message: "High Performance",
     }),
-    path: "/img/storage",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
     description: (
       <>
         <Translate>
-          CasWAF has a front-end back-end separation architecture, with maneuverable web UI and supporting high concurrency.
+          Built for scale with low latency and high throughput. Handles millions of requests per day without compromising on security or performance.
         </Translate>
       </>
     ),
   },
   {
     title: translate({
-      message: "Supporting Multi-Language",
+      message: "Developer Friendly",
     }),
-    path: "/img/language",
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
     description: (
       <>
-        <Translate> CasWAF is supporting multi-languages, using i18n to support multi-languages UI. For more languages support, welcome to propose in</Translate> <a href="https://github.com/casbin/caswaf/"><Translate> our community</Translate></a>.
+        <Translate>
+          Modern API, extensive documentation, and active community support. Integrate seamlessly with your existing infrastructure and workflows.
+        </Translate>
       </>
     ),
   },
 ];
 
-function Feature({title, path, description}) {
-  const {colorMode} = useColorMode();
+function Feature({title, description, icon}) {
   return (
     <div className={clsx("col col--4")}>
-      <div className="text--center">
-        <img src={colorMode === "light" ? path + ".png" : path + "-dark.png"} className={styles.featureSvg} alt={title} />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+      <div className={styles.featureCard}>
+        <div className={styles.featureIcon}>{icon}</div>
+        <h3 className={styles.featureTitle}>{title}</h3>
+        <p className={styles.featureDescription}>{description}</p>
       </div>
     </div>
   );
